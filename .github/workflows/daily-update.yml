@@ -2,7 +2,7 @@ name: Daily data refresh and Pages deployment
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 13 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -67,7 +67,7 @@ jobs:
           retention-days: 14
       - name: Run summary
         run: |
-          echo 'Daily refresh validated. Schedule: 09:00 Asia/Singapore (01:00 UTC).' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Daily refresh validated. Schedule: 21:00 Asia/Singapore (13:00 UTC).' >> "$GITHUB_STEP_SUMMARY"
           cat output/refresh-status.json >> "$GITHUB_STEP_SUMMARY"
 
   deploy:
